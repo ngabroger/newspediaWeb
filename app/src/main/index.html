@@ -9,8 +9,8 @@
   </head>
   <body>
     <header class="bg-transparent w-full absoulute top-0 left-0 flex items-center z-10">
-      <div class="container">
-        <div class="flex items-center justify-between relative">
+      <div class="w-full shadow-xl">
+        <div class="flex items-center justify-between lg:justify-between relative">
           <!-- Logo -->
           <div class="px-4 ml-3">
             <a href="#home" class="py-6 flex"
@@ -19,14 +19,30 @@
             >
           </div>
           <div class="flex items-center px-4">
-            <button id="hamburger" class="block absoulute right-4">
-              <span class="w-[30px] my-2 block bg-black"></span>
-              <span class="w-[30px] my-2 block bg-black"></span>
-              <span class="w-[30px] my-2 block bg-black"></span>
+            <button id="hamburger" class="block absoulute lg:hidden">
+              <span class="hamburger-menu transition duration-300 ease-in-out"></span>
+              <span class="hamburger-menu duration-300 ease-in-out"></span>
+              <span class="hamburger-menu duration-300 ease-in-out"></span>
             </button>
+            <nav id="nav-menu" class="hidden absolute right-0 py-5 px-5 bg-white shadow-lg rounded-lg top-14 w-full lg:static lg:bg-transparent lg:max-w-full lg:flex lg:rounded-none lg:shadow-none lg:items-center">
+              <ul class="block">
+                <li class="group"><a class="text-dark py-2 mx-8 flex text-base group-hover:text-green-700" href="#home"> Home </a></li>
+              </ul>
+              <ul class="block">
+                <li class="group"><a class="text-dark py-2 mx-8 flex text-base group-hover:text-green-700" href="#about"> About </a></li>
+              </ul>
+              <ul class="block">
+                <li class="group"><a class="text-dark py-2 mx-8 flex text-base group-hover:text-green-700" href="#features"> Features </a></li>
+              </ul>
+              <ul class="block">
+                <li class="group"><a class="text-dark py-2 mx-8 flex text-base group-hover:text-green-700" href="#features"> Contact us </a></li>
+              </ul>
+            </nav>
           </div>
+          <div class="mr-10 hidden lg:block"><button class="bg-[#75B163] pt-[12px] pb-[12px] px-5 border-green-600 border hover:bg-green-800 transition text-white rounded-3xl">Download Now</button></div>
         </div>
       </div>
     </header>
+    <script src="../../resource/js/main.js"></script>
   </body>
 </html>
