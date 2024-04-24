@@ -2,7 +2,16 @@
 module.exports = {
   content: ["app/src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        // Tambahkan warna lainnya jika diperlukan
+      },
+      fontFamily: {
+        
+      }
+    },
   },
   plugins: [],
 }
