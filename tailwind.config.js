@@ -11,6 +11,7 @@ module.exports = {
       fontFamily: {
         glacial: "'Glacial', serif",
         montserrat: "'Montserrat', serif",
+        roboto: '"Roboto", sans-serif',
       }
     },
   },
