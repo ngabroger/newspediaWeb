@@ -10,9 +10,16 @@
       --color-primary: #B0D3B2;
       --color-secondary: #75B163;
     }
-    
+    @font-face {
+        font-family: 'Glacial';
+        src: url('../font/GlacialIndifference-Regular.otf') format('otf');
+    }
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('../font/Montserrat-Regular.ttf') format('ttf');
+    }
   }
-  
+
 .hamburger-menu{
     @apply w-[30px] h-[2px] my-2 block bg-black;
 }

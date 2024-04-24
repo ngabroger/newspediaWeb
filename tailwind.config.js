@@ -9,7 +9,8 @@ module.exports = {
         // Tambahkan warna lainnya jika diperlukan
       },
       fontFamily: {
-        
+        glacial: "'Glacial', serif",
+        montserrat: "'Montserrat', serif",
       }
     },
   },
