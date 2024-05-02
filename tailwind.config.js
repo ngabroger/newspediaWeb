@@ -9,7 +9,7 @@ module.exports = {
         // Tambahkan warna lainnya jika diperlukan
       },
       fontFamily: {
-        glacial: "'Glacial', serif",
+        glacial: "'Glacial', sans-serif",
         montserrat: "'Montserrat', serif",
         roboto: '"Roboto", sans-serif',
       }
