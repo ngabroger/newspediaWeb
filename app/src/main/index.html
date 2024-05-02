@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to NewsPedia</title>
 
     <link rel="stylesheet" href="../../resource/css/output.css" />
+
+    <!-- Font Awesome CDN Link -->
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
   </head>
   <body>
     <header class="bg-transparent w-full absoulute top-0 left-0 flex items-center z-10 font-montserrat">
@@ -50,7 +54,7 @@
       </div>
     </header>
 
-    <div class="mt-12 block justify-center font-montserrat">
+    <div id="home" class="mt-12 block justify-center font-montserrat">
       <h2 class="text-center font-medium place-content-center text-3xl">
         Experience News Like Never Before:<br />
         <span class="ml-3">NewsPedia Brings Stories to Life</span>
@@ -69,18 +73,18 @@
       <div class="bg-cover bg-no-repeat w-full h-full z-0 bg-center sm:bg-top" style="background-image: url('../../resource/image/ellipse-background.png')">
         <div class="absolute">
           <img class="xl:w-72 lg:w-64 sm:w-56 w-52 mx-auto -mt-44" src="../../resource/image/android-display.png" alt="NewsPedia Mobile" />
-          <h3 class="font-montserrat text-center font-semibold text-xl">Discover Our Journey: About NewsPedia</h3>
-          <div class="mt-5 mx-auto text-center md:flex w-11/12 justify-around">
+          <h3 id="about" class="font-montserrat text-center font-semibold text-xl">Discover Our Journey: About NewsPedia</h3>
+          <div class="mt-14 mx-auto text-center md:flex w-11/12 justify-around">
             <div class="text-center md:p-5">
               <h3 class="font-semibold font-montserrat">Unveiling Our Story</h3>
-              <p class="font-normal text-sm mb-5 lg:text-base">
+              <p class="font-normal text-base mb-5 lg:text-base">
                 At NewsPedia, we believe that easy and fast access to accurate information is everyone's right. Originating from the desire to provide a platform that facilitates access to the latest news, we are committed to delivering
                 high-quality service to our users. Discover our journey and what drives our mission here.
               </p>
             </div>
             <div class="text-center md:p-5">
               <h3 class="font-semibold font-montserrat">Empowering with Reliable News</h3>
-              <p class="font-normal text-sm">
+              <p class="font-normal text-base">
                 We at NewsPedia consider it essential to empower our users with reliable news. We understand the importance of having a trusted source of information in this digital age, which is why we are committed to delivering accurate,
                 objective, and relevant reports. Find out how we strive to fulfill this commitment here.
               </p>
@@ -90,7 +94,7 @@
       </div>
     </div>
 
-    <div class="mb-44 mt-10">
+    <div id="features" class="mb-44 mt-10">
       <h3 class="text-center font-semibold text-2xl font-montserrat mb-5">Our Features</h3>
       <div class="text-center w-11/12 justify-center items-center mx-auto sm:w-9/12 md:flex md:w-11/12 lg:w-10/12">
         <div class="text-center md:p-5 mb-6">
@@ -117,7 +121,7 @@
       </div>
     </div>
 
-    <div class="mb-40">
+    <div id="contact" class="mb-20">
       <div class="bg-primary text-center w-11/12 h-64 mx-auto border rounded-2xl p-8">
         <h3 class="font-montserrat font-semibold text-base mb-3 sm:mb-8 md:text-xl">We're always here to listen!</h3>
         <p class="font-montserrat text-sm mb-6 sm:mb-8 sm:text-base">Feel free to reach out if you have any questions or need assistance.</p>
@@ -126,23 +130,37 @@
       <div></div>
     </div>
 
-    <div>
-      <div>
-        <h3>Services</h3>
+    <div class="mb-20 w-11/12 mx-auto sm:flex sm:flex-wrap sm:justify-center sm:items-center sm:gap-20">
+      <div class="mb-5">
+        <h3 class="font-semibold">Services</h3>
         <h3>Privacy policy</h3>
       </div>
-      <div>
-        <h3>About Us</h3>
+      <div class="mb-5">
+        <h3 class="font-semibold">About Us</h3>
         <h3>Terms and conditions</h3>
       </div>
-      <div>
-        <h3>How It Works</h3>
+      <div class="mb-5">
+        <h3 class="font-semibold">How It Works</h3>
         <h3>FAQ</h3>
       </div>
-      <div>
-        <h3>Contact us</h3>
-        <a href="">newspedia@gmail.com</a>
+      <div class="">
+        <h3 class="font-semibold">Contact us</h3>
+        <p>newspedia@gmail.com</p>
         <a href="">+3333-4444-5555</a>
+        <div class="flex gap-4">
+          <div >
+            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+          <div>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+          </div>
+          <div>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+          <div>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
       </div>
     </div>
 
