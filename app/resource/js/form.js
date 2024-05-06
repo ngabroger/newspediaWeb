@@ -23,7 +23,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     Swal.fire({
         icon: 'success',
         title: 'Success!',
-        text: 'Your message has been sent successfully.',
+        html: 'Thank you for your message, <strong>' + name + '</strong>!<br>Your message has been sent successfully.',
         confirmButtonText: 'OK'
     }).then((result) => {
         if (result.isConfirmed) {
