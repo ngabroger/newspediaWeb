@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tailwindcss -i ./app/resource/css/input.css -o ./app/resource/css/output.css --watch"
+    "dev": "tailwindcss -i ./public/app/resource/css/input.css -o ./public/app/resource/css/output.css --watch"
   },
   "keywords": [],
   "author": "",
