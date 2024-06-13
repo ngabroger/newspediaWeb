@@ -14,6 +14,7 @@ onValue(newsRef, (snapshot) => {
         for (const key in data) {
             if (data.hasOwnProperty(key)) {
                 const row = data[key];
+                console.log(`Processing key: ${key}`); 
                 const tr = document.createElement("tr");
                 tr.classList.add('bg-white', 'border-b', 'dark:bg-gray-800', 'dark:border-gray-700', 'hover:bg-gray-200', 'dark:hover:bg-gray-600')
                 tr.innerHTML = `
@@ -37,9 +38,9 @@ onValue(newsRef, (snapshot) => {
                             <button class="">
                                 <i class="material-symbols-outlined hover:text-primary">Edit</i>
                             </button>
-                            <button class="hover:text-primary delete-btn">
-                                <i class="material-symbols-outlined  hover:text-primary" data-key="${key}">Delete</i>
-                            </button>
+                           <button class="hover:text-primary delete-btn" data-key="${key}">
+                            <i class="material-symbols-outlined hover:text-primary">Delete</i>
+                        </button>
                             <button class="hover:text-primary">
                                 <i class="material-symbols-outlined hover:text-primary">Visibility</i>
                             </button>
@@ -53,6 +54,7 @@ onValue(newsRef, (snapshot) => {
         deleteButtons.forEach(button => {
             button.addEventListener('click', function() {
                 const key = this.getAttribute('data-key');
+                console.log(`Button clicked with key: ${key}`);
                 deleteNewsItem(key);
             });
         });
