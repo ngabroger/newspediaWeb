@@ -1,4 +1,7 @@
 {
+<<<<<<< HEAD
+=======
     "livePreview.defaultPreviewPath": "/public/app/src/main/index.html",
+>>>>>>> 57456c52944607cdb165beb56579a3d0918536f6
     "liveServer.settings.port": 5502
 }
