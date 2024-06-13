@@ -12,7 +12,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tailwindcss -i ./public/app/resource/css/input.css -o ./public/app/resource/css/output.css --watch"
+    "dev": "tailwindcss -i ./public/app/resource/css/input.css -o ./public/app/resource/css/output.css --watch",
+    "devadmin": "tailwindcss -i ./public/app/resource/css/input.css -o ./public/app/resource/css/outputadmin.css --watch"
   },
   "keywords": [],
   "author": "",
