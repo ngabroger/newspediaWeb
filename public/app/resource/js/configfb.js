@@ -1,14 +1,11 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// config-firebase.js
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
+import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
+import { getStorage } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js'; // Impor getStorage dari Firebase Storage
 const firebaseConfig = {
   apiKey: "AIzaSyAV5Ksy5dKllrvDqwgMk0hmRcGJHsmjzhI",
   authDomain: "newspedia-1d8af.firebaseapp.com",
+  databaseURL: "https://newspedia-1d8af-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "newspedia-1d8af",
   storageBucket: "newspedia-1d8af.appspot.com",
   messagingSenderId: "795181966148",
@@ -16,6 +13,10 @@ const firebaseConfig = {
   measurementId: "G-XYYSCK63RJ"
 };
 
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const db = getDatabase(app);
+const storage = getStorage(app);
+export { db ,storage};
+
