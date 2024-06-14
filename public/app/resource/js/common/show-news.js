@@ -2,6 +2,9 @@ import { db } from '../configfb.js';
 import { ref, onValue, remove, update } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
 
 // Function to load categories into the edit dropdown
+document.getElementById('search').addEventListener('input', filterNews);
+let newsData = {};
+
 function loadCategories() {
     const categoryRef = ref(db, 'category');
     onValue(categoryRef, (snapshot) => {
@@ -25,13 +28,18 @@ function loadCategories() {
 const newsRef = ref(db, 'NewsList');
 onValue(newsRef, (snapshot) => {
     console.log("Firebase onValue triggered");
-    const data = snapshot.val();
-    console.log(data);
+    newsData = snapshot.val();
+    displayNews(newsData);
+});
 
+// Function to display news items
+function displayNews(data) {
     const dataList = document.getElementById("dataTableBody");
+    const noDataMessage = document.getElementById("noDataMessage");
     dataList.innerHTML = ""; // Clear existing elements
 
-    if (data) {
+    if (data && Object.keys(data).length > 0) {
+        noDataMessage.classList.add('hidden');
         for (const key in data) {
             if (data.hasOwnProperty(key)) {
                 const row = data[key];
@@ -116,26 +124,73 @@ onValue(newsRef, (snapshot) => {
         const editButtons = document.querySelectorAll('.edit-btn');
         editButtons.forEach(button => {
             button.addEventListener('click', function() {
-                loadCategories(); // Load categories before showing the modal
                 const key = this.getAttribute('data-key');
-                const row = data[key];
-                document.getElementById('editKey').value = key;
-                document.getElementById('editName').value = row.nameNews;
-                document.getElementById('editDatePublish').value = row.datePublish;
-                document.getElementById('editCategory').value = row.category;
-                document.getElementById('editDescription').value = row.description;
-                document.getElementById('edit-modal').classList.remove('hidden');
+                const rowData = data[key];
+                openEditModal(key, rowData);
             });
         });
+
     } else {
-        console.log("No data available");
+        noDataMessage.classList.remove('hidden');
     }
-});
-document.querySelectorAll('[data-modal-toggle="edit-modal"]').forEach(item => {
-    item.addEventListener('click', event => {
-        closeModal();
-    });
-});
+}
+
+// Function to delete news item from Firebase
+function deleteNewsItem(key) {
+    const newsItemRef = ref(db, `NewsList/${key}`);
+    remove(newsItemRef)
+        .then(() => {
+            console.log(`Item with key ${key} deleted successfully`);
+            Swal.fire(
+                'Deleted!',
+                'Your item has been deleted.',
+                'success'
+            );
+        })
+        .catch((error) => {
+            console.error("Error deleting item: ", error);
+            Swal.fire(
+                'Error!',
+                'Failed to delete item.',
+                'error'
+            );
+        });
+}
+
+// Function to update news item in Firebase
+function updateNewsItem(key, updatedData) {
+    const newsItemRef = ref(db, `NewsList/${key}`);
+    update(newsItemRef, updatedData)
+        .then(() => {
+            console.log(`Item with key ${key} updated successfully`);
+            Swal.fire(
+                'Updated!',
+                'Your item has been updated.',
+                'success'
+            );
+            document.getElementById('edit-modal').classList.add('hidden');
+        })
+        .catch((error) => {
+            console.error("Error updating item: ", error);
+            Swal.fire(
+                'Error!',
+                'Failed to update item.',
+                'error'
+            );
+        });
+}
+
+// Function to open edit modal and load data
+function openEditModal(key, data) {
+    loadCategories(); // Load categories before showing the modal
+    document.getElementById('editKey').value = key;
+    document.getElementById('editName').value = data.nameNews;
+    document.getElementById('editDatePublish').value = data.datePublish;
+    document.getElementById('editCategory').value = data.category;
+    document.getElementById('editDescription').value = data.description;
+    document.getElementById('edit-modal').classList.remove('hidden');
+}
+
 // Handle edit form submission
 document.getElementById('editForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -162,56 +217,22 @@ document.getElementById('editForm').addEventListener('submit', function(e) {
     }
 });
 
-// Function to update news item in Firebase
-function updateNewsItem(key, updatedData) {
-    const newsItemRef = ref(db, `NewsList/${key}`);
-    update(newsItemRef, updatedData)
-        .then(() => {
-            console.log(`Item with key ${key} updated successfully`);
-            Swal.fire(
-                'Updated!',
-                'Your item has been updated.',
-                'success'
-            );
-            document.getElementById('edit-modal').classList.add('hidden');
-        })
-        .catch((error) => {
-            console.error("Error updating item: ", error);
-            Swal.fire(
-                'Error!',
-                'Failed to update item.',
-                'error'
-            );
-        });
+// Function to filter news items based on search input
+function filterNews() {
+    const searchValue = document.getElementById('search').value.toLowerCase();
+    const filteredData = {};
+
+    for (const key in newsData) {
+        if (newsData.hasOwnProperty(key)) {
+            const row = newsData[key];
+            if (row.nameNews.toLowerCase().includes(searchValue) || 
+                row.category.toLowerCase().includes(searchValue) || 
+                row.description.toLowerCase().includes(searchValue) || 
+                row.datePublish.toLowerCase().includes(searchValue)) {
+                filteredData[key] = row;
+            }
+        }
+    }
+
+    displayNews(filteredData);
 }
-
-function closeModal() {
-    const editModal = document.getElementById('edit-modal');
-    editModal.classList.add('hidden');
-}
-
-// Function to delete news item from Firebase
-function deleteNewsItem(key) {
-    const newsItemRef = ref(db, `NewsList/${key}`);
-    remove(newsItemRef)
-        .then(() => {
-            console.log(`Item with key ${key} deleted successfully`);
-            Swal.fire(
-                'Deleted!',
-                'Your item has been deleted.',
-                'success'
-            );
-        })
-        .catch((error) => {
-            console.error("Error deleting item: ", error);
-            Swal.fire(
-                'Error!',
-                'Failed to delete item.',
-                'error'
-            );
-        });
-}
-
-
-
-
