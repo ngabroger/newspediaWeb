@@ -12,11 +12,21 @@ document.addEventListener("DOMContentLoaded", function() {
         nameCategory: nameCategory
       })
       .then(() => {
-        alert("Data berhasil dikirim!");
+        Swal.fire({
+          icon: 'success',
+          title: 'Data berhasil dikirim!',
+          showConfirmButton: false,
+          timer: 1500
+      });
         form.reset();
       })
       .catch((error) => {
         console.error("Error writing to database:", error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Terjadi kesalahan saat mengirim data.',
+      });
       });
     });
   });
