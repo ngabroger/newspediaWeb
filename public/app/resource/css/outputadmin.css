@@ -1237,10 +1237,6 @@ input:checked + .toggle-bg{
   margin-top: 0.5rem;
 }
 
-.mt-20{
-  margin-top: 5rem;
-}
-
 .mt-6{
   margin-top: 1.5rem;
 }
@@ -1798,10 +1794,6 @@ input:checked + .toggle-bg{
 
 .p-4{
   padding: 1rem;
-}
-
-.p-5{
-  padding: 1.25rem;
 }
 
 .p-6{

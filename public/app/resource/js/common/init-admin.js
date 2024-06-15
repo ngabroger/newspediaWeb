@@ -6,15 +6,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('adminForm');
     form.addEventListener("submit", function(event) {
         event.preventDefault();
-        const emailAdmin = document.getElementById("email").value;
-        const usernameAdmin = document.getElementById("username").value;
-        const passwordAdmin = document.getElementById("password").value;
-        const adminRef = ref(db, 'Admin');
+        const emailAdmin = document.getElementById("adminEmail").value;
+        const usernameAdmin = document.getElementById("adminUsername").value;
+        const passwordAdmin = document.getElementById("adminPassword").value;
+        const adminRef = ref(db, 'Admins');
 
         push(adminRef, {
-            email: emailAdmin,
-            username: usernameAdmin,
-            password: passwordAdmin,
+            adminEmail: emailAdmin,
+            adminUsername: usernameAdmin,
+            adminPassword: passwordAdmin,
         }).then(() => {
             // Tampilkan SweetAlert untuk informasi sukses
             Swal.fire({
