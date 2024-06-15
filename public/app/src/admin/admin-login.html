@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Login</title>
 
-  <!-- CSS Link -->
+  <!-- Favicon icon-->
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <link rel="stylesheet" href="../../resource/css/admin-login.css">
-
-  <!-- Icon Title Link -->
   <link rel="Icon" href="../../resource/image/logo.png" type="image/x-icon">
-
 </head>
-
 <body>
   <main>
     <div class="form">
-      <form class="form-control" action="">
+      <form id="loginForm" class="form-control">
         <p class="title">Login</p>
         <div class="input-field">
-          <input required="" class="input" type="text" />
-          <label class="label" for="input">Enter Email</label>
+          <input id="email" required="" class="input" type="text" />
+          <label class="label" for="email">Enter Email</label>
         </div>
         <div class="input-field">
-          <input required="" class="input" type="password" />
-          <label class="label" for="input">Enter Password</label>
+          <input id="password" required="" class="input" type="password" />
+          <label class="label" for="password">Enter Password</label>
         </div>
-        <button class="submit-btn">Sign In</button>
+        <button type="submit" class="submit-btn">Sign In</button>
       </form>
-
     </div>
   </main>
-</body>
+  
 
+  <script type="module" src="../../resource/js/common/process-login-admin.js"></script>
+  <script type="module" src="../../resource/js/configfb.js"></script>
+
+</body>
 </html>
