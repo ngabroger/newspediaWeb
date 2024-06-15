@@ -24,9 +24,9 @@ function displayAdmin(data) {
                 const tr = document.createElement("tr");
                 tr.classList.add('bg-white', 'border-b', 'dark:bg-gray-800', 'dark:border-gray-700', 'hover:bg-gray-200', 'dark:hover:bg-gray-600');
                 tr.innerHTML = `
-                    <td class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">${row.email}</td>
+                    <td class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">${key}</td>
                     <td class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">${row.username}</td>
-                    <td class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">${row.password}</td>
+                    <td class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">${censorPassword(row.password)}</td>
                     <td class="px-4 py-4">
                         <div class="flex items-center space-x-3.5">
                             <button data-key="${key}" class="hover:text-primary delete-btn">
@@ -42,6 +42,11 @@ function displayAdmin(data) {
     } else {
         noDataMessage.classList.remove("hidden");
     }
+}
+
+// Function to censor password with asterisks
+function censorPassword(password) {
+    return '*'.repeat(password.length); // Mengganti setiap karakter dengan bintang (*)
 }
 
 // Attach event listeners to delete buttons
@@ -100,10 +105,12 @@ function filterAdmin() {
     for (const key in adminData) {
         if (adminData.hasOwnProperty(key)) {
             const row = adminData[key];
-            if (row.email.toLowerCase().includes(searchValue) || row.username.toLowerCase().includes(searchValue) || row.password.toLowerCase().includes(searchValue)) {
+            // Ubah kondisi pencarian sesuai dengan properti yang ingin Anda cocokkan
+            if (row.username.toLowerCase().includes(searchValue) || row.password.toLowerCase().includes(searchValue)) {
                 filteredData[key] = row;
             }
         }
     }
-    displayAdmin(filteredData);
+    displayAdmin(filteredData); // Tampilkan data yang sudah difilter
 }
+

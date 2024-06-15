@@ -1,19 +1,32 @@
-import { auth } from '../configfb.js';
-import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js';
+// display-admin-info.js
+
+import { db } from '../configfb.js'; // Sesuaikan path jika berbeda
+import { ref, get, child } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            // User is signed in, get the user info
-            const displayName = user.displayName || 'No Username';
-            const email = user.email;
+    const usernameAdminElement = document.getElementById('infoAdmin');
 
-            // Display the user info in the appropriate elements
-            // document.getElementById('username').textContent = displayName;
-            document.getElementById('email').textContent = email;
-        } else {
-            // No user is signed in, redirect to the login page
-            window.location.href = 'admin-login.html';
-        }
-    });
+    if (usernameAdminElement) {
+        const dbRef = ref(db);
+        get(child(dbRef, 'Admin')).then((snapshot) => {
+            if (snapshot.exists()) {
+                const admins = snapshot.val();
+                let adminUsername = '';
+
+                for (let key in admins) {
+                    // Misalkan Anda ingin menampilkan admin pertama yang ditemukan
+                    adminUsername = admins[key].username; // Ambil username admin dari Firebase
+                    break; // Hentikan loop setelah menemukan admin pertama
+                }
+
+                usernameAdminElement.textContent = adminUsername;
+            } else {
+                console.log('Tidak ada data admin yang ditemukan.');
+            }
+        }).catch((error) => {
+            console.error('Error reading from database:', error);
+        });
+    } else {
+        console.error('Element dengan ID usernameAdmin tidak ditemukan.');
+    }
 });

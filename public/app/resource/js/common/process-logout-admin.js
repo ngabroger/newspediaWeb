@@ -1,7 +1,4 @@
-import { auth } from '../configfb.js';
-import { signOut } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js';
-
-document.getElementById('signOut').addEventListener('click', function(event) {
+document.getElementById('logoutAdmin').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent the default link behavior
 
     // Show confirmation dialog using SweetAlert
@@ -16,23 +13,11 @@ document.getElementById('signOut').addEventListener('click', function(event) {
         cancelButtonText: 'No, stay logged in'
     }).then((result) => {
         if (result.isConfirmed) {
-            // If confirmed, sign out from Firebase
-            signOut(auth).then(() => {
-                // Sign-out successful
-                console.log('User signed out');
+            // If confirmed, remove isLoggedIn from localStorage
+            localStorage.removeItem('isLoggedIn');
 
-                // Redirect to the login page or another page
-                window.location.href = 'admin-login.html'; // Update with the actual login page
-            }).catch((error) => {
-                console.error('Error signing out:', error);
-
-                // Display an error message to the user
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Logout Failed',
-                    text: error.message,
-                });
-            });
+            // Redirect to the login page
+            window.location.href = 'admin-login.html'; // Update with the actual login page
         }
     });
 });
