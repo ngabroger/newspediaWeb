@@ -24,7 +24,7 @@ function displayAdmin(data) {
                 const tr = document.createElement("tr");
                 tr.classList.add('bg-white', 'border-b', 'dark:bg-gray-800', 'dark:border-gray-700', 'hover:bg-gray-200', 'dark:hover:bg-gray-600');
                 tr.innerHTML = `
-                    <td class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">${row.email}</td>
+                    <td class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">${key}</td>
                     <td class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">${row.username}</td>
                     <td class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">${row.password}</td>
                     <td class="px-4 py-4">

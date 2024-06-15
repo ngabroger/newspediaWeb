@@ -63,7 +63,7 @@
                                 aria-expanded="false" data-dropdown-toggle="dropdown-user">
                                 <span class="sr-only">Open user menu</span>
                                 <img class="w-8 h-8 rounded-full"
-                                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                                    src="../../resource/image/adminprofile.png"
                                     alt="user photo" />
                             </button>
                         </div>
@@ -161,7 +161,7 @@
                     <table class="w-full table-auto text-sm text-left rtl:text-right dark:text-blue-100">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
                             <tr class="bg-gray-2 text-left dark:bg-meta-4">
-                                <th class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">Email</th>
+                                <th class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">UID</th>
                                 <th class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">Username</th>
                                 <th class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">Password</th>
                                 <th class="px-4 py-4 font-medium text-black dark:text-white truncate...">Actions</th>
@@ -201,17 +201,11 @@
                 <!-- Modal body -->
                 <form class="p-4 md:p-5" id="adminForm">
                     <div class="grid gap-4 mb-4 grid-cols-2">
-                        <div class="col-span-2">
-                            <label for="email"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                            <input type="email" name="email" id="email"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-900 focus:border-emerald-900 transition block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                placeholder="Type Email" required="" />
-                        </div>
+                       
                         <div class="col-span-2">
                             <label for="name"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
-                            <input type="text" name="name" id="username"
+                            <input type="text" name="name" id="usernameAdmin"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-900 focus:border-emerald-900 transition block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                 placeholder="Type Username" required="" />
                         </div>
@@ -241,8 +235,8 @@
     
     <script type="module" src="../../resource/js/common/show-admin-tbl.js"></script>
     <script type="module" src="../../resource/js/common/init-admin.js"></script>
-    <script type="module" src="../../resource/js/common/process-logout-admin.js"></script>
-    <script type="module" src="../../resource/js/common/display-user-info.js"></script>
+    <!-- <script type="module" src="../../resource/js/common/process-logout-admin.js"></script> -->
+    <!-- <script type="module" src="../../resource/js/common/display-user-info.js"></script> -->
 
     <script type="module" src="../../resource/js/configfb.js"></script>
     <script src="../../resource/js/frontend/flowbite.min.js"></script>
