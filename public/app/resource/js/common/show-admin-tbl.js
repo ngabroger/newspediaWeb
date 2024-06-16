@@ -49,7 +49,8 @@ function censorPassword(password) {
     return '*'.repeat(password.length); // Mengganti setiap karakter dengan bintang (*)
 }
 
-// Attach event listeners to delete buttons
+
+// Delete admin item from Firebase
 function attachDeleteEventListeners() {
     const deleteButtons = document.querySelectorAll('.delete-btn');
     deleteButtons.forEach(button => {
@@ -85,7 +86,9 @@ function deleteAdminItem(key) {
                 'Deleted!',
                 'Your item has been deleted.',
                 'success'
-            );
+            ).then(() => {
+                location.reload(); // Reload the page after successful deletion
+            });
         })
         .catch((error) => {
             console.error("Error deleting item: ", error);
