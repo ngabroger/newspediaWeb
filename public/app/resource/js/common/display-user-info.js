@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         usernameAdminElement.textContent = adminUsername;
                     } else {
                         console.log('Admin dengan username tersebut tidak ditemukan.');
+                        window.location.href = "admin-login.html"; 
                     }
                 } else {
                     console.log('Tidak ada data admin yang ditemukan.');

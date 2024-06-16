@@ -8,15 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (form) { // Check if the form element exists
         form.addEventListener("submit", function(event) {
             event.preventDefault();
-            const recaptchaResponse = grecaptcha.getResponse();
-            if (recaptchaResponse.length === 0) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Captcha not verified',
-                    text: 'Please complete the reCAPTCHA.',
-                });
-                return; // Stop the form submission
-            }
+
             const usernameAdmin = document.getElementById("usernameAdmin").value;
             const passwordAdmin = document.getElementById("password").value;
 
