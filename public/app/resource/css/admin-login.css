@@ -15,6 +15,11 @@ main {
   font-family: 'Poppins', sans-serif;
 }
 
+.recaptcha-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
 
 .form-control {
   margin: 20px;
