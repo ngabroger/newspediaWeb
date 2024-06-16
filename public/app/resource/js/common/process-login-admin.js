@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                 showConfirmButton: false,
                                 timer: 1500
                             }).then(() => {
+                                // Store the logged-in admin username in sessionStorage
+                                sessionStorage.setItem('loggedInAdmin', usernameAdmin);
                                 localStorage.setItem('isLoggedIn', 'true');
                                 // Redirect or perform other actions upon successful login
                                 window.location.href = "dashboard.html"; // Change this to your dashboard page

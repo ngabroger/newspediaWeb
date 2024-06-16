@@ -7,26 +7,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const usernameAdminElement = document.getElementById('infoAdmin');
 
     if (usernameAdminElement) {
-        const dbRef = ref(db);
-        get(child(dbRef, 'Admin')).then((snapshot) => {
-            if (snapshot.exists()) {
-                const admins = snapshot.val();
-                let adminUsername = '';
+        // Get the logged-in admin username from session storage
+        const loggedInAdmin = sessionStorage.getItem('loggedInAdmin');
 
-                for (let key in admins) {
-                    // Misalkan Anda ingin menampilkan admin pertama yang ditemukan
-                    adminUsername = admins[key].username; // Ambil username admin dari Firebase
-                    break; // Hentikan loop setelah menemukan admin pertama
+        if (loggedInAdmin) {
+            const dbRef = ref(db);
+            get(child(dbRef, `Admin`)).then((snapshot) => {
+                if (snapshot.exists()) {
+                    const admins = snapshot.val();
+                    let adminUsername = '';
+
+                    for (let key in admins) {
+                        if (admins[key].username === loggedInAdmin) {
+                            adminUsername = admins[key].username; // Ambil username admin dari Firebase
+                            break; // Hentikan loop setelah menemukan admin yang sesuai
+                        }
+                    }
+
+                    if (adminUsername) {
+                        usernameAdminElement.textContent = adminUsername;
+                    } else {
+                        console.log('Admin dengan username tersebut tidak ditemukan.');
+                    }
+                } else {
+                    console.log('Tidak ada data admin yang ditemukan.');
                 }
-
-                usernameAdminElement.textContent = adminUsername;
-            } else {
-                console.log('Tidak ada data admin yang ditemukan.');
-            }
-        }).catch((error) => {
-            console.error('Error reading from database:', error);
-        });
+            }).catch((error) => {
+                console.error('Error reading from database:', error);
+            });
+        } else {
+            console.error('No admin is logged in.');
+        }
     } else {
-        console.error('Element dengan ID usernameAdmin tidak ditemukan.');
+        console.error('Element dengan ID infoAdmin tidak ditemukan.');
     }
 });
