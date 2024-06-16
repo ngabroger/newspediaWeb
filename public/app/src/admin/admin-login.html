@@ -13,7 +13,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+ 
   <link rel="stylesheet" href="../../resource/css/admin-login.css">
   <link rel="Icon" href="../../resource/image/logo.png" type="image/x-icon">
 </head>
@@ -31,13 +31,15 @@
       </div>
       
       <!-- Google reCAPTCHA -->
-      <!-- <div class="g-recaptcha" data-sitekey="6LdDxfkpAAAAANpVt_uEJ-We5eS5Lf4vrrcaTqpj"></div> -->
+      <div class="g-recaptcha" data-sitekey="6Le_8vkpAAAAABgGXRxEikNe93dez4faH_0DLT8U" data-action="LOGIN"></div>
       
-      <button type="submit" class="submit-btn">Sign In</button>
+      <button class="submit-btn" type="submit">
+  Submit
+</button>
     </form>
   </main>
   
-
+  
   <script type="module" src="../../resource/js/common/process-login-admin.js"></script>
   <script type="module" src="../../resource/js/configfb.js"></script>
 
