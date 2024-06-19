@@ -79,7 +79,8 @@ function displayNews(data) {
                 dataList.appendChild(tr); // Append the row to the table body
             }
         }
-
+        attachEditEventListeners()
+        attachInfoEventListeners()
         // Handle delete button click
         const deleteButtons = document.querySelectorAll('.delete-btn');
         deleteButtons.forEach(button => {
@@ -101,32 +102,6 @@ function displayNews(data) {
                         deleteNewsItem(key);
                     }
                 });
-            });
-        });
-
-        // Handle info button click
-        const infoButtons = document.querySelectorAll('.info-btn');
-        infoButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const key = this.getAttribute('data-key');
-                const row = data[key];
-                document.getElementById('modal-title').innerText = row.nameNews;
-                document.getElementById('modal-image').src = row.imageNews;
-                document.getElementById('modal-description').innerText = row.description;
-                document.getElementById('modal-category').innerText = `Category: ${row.category}`;
-                document.getElementById('modal-date').innerText = `Date Published: ${row.datePublish}`;
-                
-                document.getElementById('static-modal').classList.remove('hidden');
-            });
-        });
-
-        // Handle edit button click
-        const editButtons = document.querySelectorAll('.edit-btn');
-        editButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const key = this.getAttribute('data-key');
-                const rowData = data[key];
-                openEditModal(key, rowData);
             });
         });
 
@@ -156,6 +131,32 @@ function deleteNewsItem(key) {
             );
         });
 }
+function attachInfoEventListeners() {
+    const infoButtons = document.querySelectorAll('.info-btn');
+    infoButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const key = this.getAttribute('data-key');
+           openInfoModal(key);
+        });
+    });
+}
+function openInfoModal(dataKey) {
+    const row = newsData[dataKey];
+    document.getElementById('modal-title').innerText = row.nameNews;
+    document.getElementById('modal-image').src = row.imageNews;
+    document.getElementById('modal-description').innerText = row.description;
+    document.getElementById('modal-category').innerText = `Category: ${row.category}`;
+    document.getElementById('modal-date').innerText = `Date Published: ${row.datePublish}`;
+    const modalContainer = document.getElementById('info-modal-container');
+    modalContainer.classList.remove('hidden');
+}
+function closeInfoModal() {
+    const modalContainer = document.getElementById('info-modal-container');
+    modalContainer.classList.add('hidden');
+}
+document.querySelectorAll('[data-modal-hide="info-modal"]').forEach(button => {
+    button.addEventListener('click', closeInfoModal);
+});
 
 // Function to update news item in Firebase
 function updateNewsItem(key, updatedData) {
@@ -179,17 +180,37 @@ function updateNewsItem(key, updatedData) {
             );
         });
 }
+function attachEditEventListeners() {
+    const editButtons = document.querySelectorAll('.edit-btn');
+    editButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const key = this.getAttribute('data-key');
+
+            openEditModal(key);
+        });
+    });
+}
+
 
 // Function to open edit modal and load data
-function openEditModal(key, data) {
+function openEditModal(key) {
     loadCategories(); // Load categories before showing the modal
+    const data = newsData[key];
     document.getElementById('editKey').value = key;
     document.getElementById('editName').value = data.nameNews;
     document.getElementById('editDatePublish').value = data.datePublish;
     document.getElementById('editCategory').value = data.category;
     document.getElementById('editDescription').value = data.description;
-    document.getElementById('edit-modal').classList.remove('hidden');
+    const modalContainer = document.getElementById('edit-modal-container');
+    modalContainer.classList.remove('hidden');
 }
+function closeEditModal() {
+    const modalContainer = document.getElementById('edit-modal-container');
+    modalContainer.classList.add('hidden');
+}
+document.querySelectorAll('[data-modal-hide="edit-modal"]').forEach(button => {
+    button.addEventListener('click', closeEditModal);
+});
 
 // Handle edit form submission
 document.getElementById('editForm').addEventListener('submit', function(e) {
