@@ -56,8 +56,8 @@
                             </path>
                         </svg>
                     </button>
-                    <a href="https://flowbite.com" class="flex ms-2 md:me-24">
-                        <img src="../../resource/image/logo.png" class="h-8 me-3" alt="FlowBite Logo" />
+                    <a href="#" class="flex ms-2 md:me-24">
+                        <img src="../../resource/image/logo.png" class="h-8 me-3" alt="Newspedia Logo" />
                         <span
                             class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Newspedia</span>
                     </a>
@@ -285,7 +285,7 @@
                   type="text"
                   name="name"
                   id="nameNews"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5    dark:text-white "
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-greering-green-600 block w-full p-2.5    dark:text-white "
                   placeholder="Type News title"
                   required=""
                 />
@@ -296,7 +296,7 @@
                   type="date"
                   name="datePublish"
                   id="datePublish"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-greering-green-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder=""
                   required=""
                 />
@@ -348,6 +348,8 @@
       </div>
     </div>
 
+
+    <!-- INFO MODAL -->
     <div
       id="static-modal"
       data-modal-target="static-modal"
@@ -355,8 +357,9 @@
       aria-hidden="true"
       class="hidden overflow-y-auto  overflow-x-hidden fixed top-0 right-0 left-0 inset-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] h-full"
     >
+    <div id="overlay" class="fixed inset-0 bg-gray-900 bg-opacity-50"></div>
       <div class="relative p-4 w-full max-w-2xl max-h-full">
-        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 w-full p-4">
+        <div class="relative bg-white rounded-lg shadow-xl dark:bg-gray-700 border border-gray-300">
           <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
             <h3 id="modal-title" class="text-xl font-semibold text-gray-900 dark:text-white">Detail Berita</h3>
             <button
@@ -389,10 +392,13 @@
       </div>
     </div>
 
-    <div id="edit-modal" data-modal-target="edit-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed inset-0 z-50 justify-center items-center w-full h-full">
+
+    <!-- EDIT MODAL -->
+    <div id="edit-modal" data-modal-target="edit-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden flex fixed inset-0 z-50 justify-center items-center w-full h-full">
+      <div id="overlay" class="fixed inset-0 bg-gray-900 bg-opacity-50"></div>
       <div class="relative p-4 w-full max-w-md max-h-full">
           <!-- Modal content -->
-          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <div class="relative bg-white rounded-lg shadow-xl dark:bg-gray-700 border border-gray-400">
               <!-- Modal header -->
               <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                   <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Edit News Item</h3>
@@ -414,7 +420,7 @@
                             type="text"
                             name="name"
                             id="editName"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 transition block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Type News title"
                             required=""
                           />
@@ -425,7 +431,7 @@
                             type="date"
                             name="editDatePublish"
                             id="editDatePublish"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 transition block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder=""
                             required=""
                           />
@@ -434,7 +440,7 @@
                           <label for="editCategory" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
                           <select
                             id="editCategory"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 transition block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                           ></select>
                         </div>
                         <div class="col-span-2">
@@ -442,7 +448,7 @@
                           <textarea
                             id="editDescription"
                             rows="4"
-                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-green-600 focus:border-green-600 transition dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Write News description here"
                           ></textarea>
                         </div>

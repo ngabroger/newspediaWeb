@@ -1,5 +1,5 @@
 import { db } from '../configfb.js';
-import { ref, onValue, remove } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
+import { ref, update, onValue, remove } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
 
 document.getElementById('search').addEventListener('input', filterAdmin);
 let adminData = {};
@@ -29,6 +29,9 @@ function displayAdmin(data) {
                     <td class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">${censorPassword(row.password)}</td>
                     <td class="px-4 py-4">
                         <div class="flex items-center space-x-3.5">
+                            <button data-key="${key}" class="hover:text-primary edit-btn">
+                                <i class="material-symbols-outlined hover:text-primary">Edit</i>
+                            </button>
                             <button data-key="${key}" class="hover:text-primary delete-btn">
                                 <i class="material-symbols-outlined hover:text-primary">Delete</i>
                             </button>
@@ -39,6 +42,7 @@ function displayAdmin(data) {
             }
         }
         attachDeleteEventListeners();
+        attachEditEventListeners();
     } else {
         noDataMessage.classList.remove("hidden");
     }
@@ -49,8 +53,7 @@ function censorPassword(password) {
     return '*'.repeat(password.length); // Mengganti setiap karakter dengan bintang (*)
 }
 
-
-// Delete admin item from Firebase
+// Attach event listeners for delete buttons
 function attachDeleteEventListeners() {
     const deleteButtons = document.querySelectorAll('.delete-btn');
     deleteButtons.forEach(button => {
@@ -100,20 +103,78 @@ function deleteAdminItem(key) {
         });
 }
 
-// Filter admin data based on search input
-function filterAdmin() {
-    const searchValue = document.getElementById('search').value.toLowerCase();
-    const filteredData = {};
-
-    for (const key in adminData) {
-        if (adminData.hasOwnProperty(key)) {
-            const row = adminData[key];
-            // Ubah kondisi pencarian sesuai dengan properti yang ingin Anda cocokkan
-            if (row.username.toLowerCase().includes(searchValue) || row.password.toLowerCase().includes(searchValue)) {
-                filteredData[key] = row;
-            }
-        }
-    }
-    displayAdmin(filteredData); // Tampilkan data yang sudah difilter
+// Attach event listeners for edit buttons
+function attachEditEventListeners() {
+    const editButtons = document.querySelectorAll('.edit-btn');
+    editButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const key = this.getAttribute('data-key');
+            openEditModal(key);
+        });
+    });
 }
 
+// Function to open edit modal and load data
+function openEditModal(key) {
+    document.getElementById('editKey').value = key;
+    const modalContainer = document.getElementById('edit-modal-container');
+    modalContainer.classList.remove('hidden');
+}
+
+// Function to close edit modal
+function closeEditModal() {
+    const modalContainer = document.getElementById('edit-modal-container');
+    modalContainer.classList.add('hidden');
+}
+
+// Event listener for close button
+document.querySelectorAll('[data-modal-hide="edit-modal"]').forEach(button => {
+    button.addEventListener('click', closeEditModal);
+});
+
+// Handle edit form submission
+document.getElementById('editForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const key = document.getElementById('editKey').value;
+    const newPassword = document.getElementById('editPassword').value;
+
+    updateAdminPassword(key, newPassword);
+});
+
+// Function to update admin password in Firebase
+function updateAdminPassword(key, newPassword) {
+    const adminItemRef = ref(db, `Admin/${key}`);
+    update(adminItemRef, { password: newPassword })
+        .then(() => {
+            console.log(`Password for item with key ${key} updated successfully`);
+            Swal.fire(
+                'Updated!',
+                'Password has been updated.',
+                'success'
+            );
+            closeEditModal();
+            displayAdmin(adminData); // Refresh the admin list
+        })
+        .catch((error) => {
+            console.error("Error updating password: ", error);
+            Swal.fire(
+                'Error!',
+                'Failed to update password.',
+                'error'
+            );
+        });
+}
+
+// Function to filter admin list based on search input
+function filterAdmin() {
+    const searchValue = document.getElementById('search').value.toLowerCase();
+    const filteredData = Object.keys(adminData).filter(key => {
+        const username = adminData[key].username.toLowerCase();
+        return username.includes(searchValue);
+    }).reduce((obj, key) => {
+        obj[key] = adminData[key];
+        return obj;
+    }, {});
+
+    displayAdmin(filteredData);
+}
