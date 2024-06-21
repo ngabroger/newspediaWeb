@@ -1,7 +1,6 @@
 // config-firebase.js
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
 import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
-
 import { getStorage } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js'; // Impor getStorage dari Firebase Storage
 const firebaseConfig = {
   apiKey: "AIzaSyAV5Ksy5dKllrvDqwgMk0hmRcGJHsmjzhI",
