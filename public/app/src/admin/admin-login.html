@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,22 @@
 
   <!-- Favicon icon-->
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
- 
+
   <link rel="stylesheet" href="../../resource/css/admin-login.css">
   <link rel="Icon" href="../../resource/image/logo.png" type="image/x-icon">
 </head>
+
 <body>
   <main>
+    <!-- LOGIN FORM -->
     <form id="loginForm" class="form-control">
       <p class="title">Login</p>
       <div class="input-field">
@@ -29,21 +34,22 @@
         <input id="password" required="" class="input" type="password" />
         <label class="label" for="password">Enter Password</label>
       </div>
-      
+
       <!-- Google reCAPTCHA -->
       <div class="recaptcha-container">
         <div class="g-recaptcha" data-sitekey="6Le_8vkpAAAAABgGXRxEikNe93dez4faH_0DLT8U" data-action="LOGIN"></div>
       </div>
-      
+
       <button class="submit-btn" type="submit">
-  Submit
-</button>
+        Submit
+      </button>
     </form>
   </main>
-  
-  
+
+
   <script type="module" src="../../resource/js/common/process-login-admin.js"></script>
   <script type="module" src="../../resource/js/configfb.js"></script>
 
 </body>
+
 </html>

@@ -125,8 +125,12 @@
                 <li>
                     <a href="#"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z"clip-rule="evenodd" />
+                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z"
+                                clip-rule="evenodd" />
                         </svg>
                         <span class="flex-1 ms-3 whitespace-nowrap">Admin</span>
 
@@ -161,11 +165,15 @@
                 <li>
                     <a href="users-page.html"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd"/>
+                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                                clip-rule="evenodd" />
                         </svg>
                         <span class="flex-1 ms-3 whitespace-nowrap">Users</span>
-                        
+
                     </a>
                 </li>
             </ul>
@@ -270,67 +278,68 @@
 
 
     <!-- EDIT ADMIN PASSWORD MODAL -->
-<div id="edit-modal-container" class="hidden fixed inset-0 z-50 flex items-center justify-center">
-    <!-- Overlay -->
-    <div id="overlay" class="fixed inset-0 bg-gray-900 bg-opacity-50"></div>
-    <!-- Modal -->
-    <div id="edit-modal" tabindex="-1" aria-hidden="true" class="relative p-4 w-full max-w-md max-h-full">
-        <!-- Modal content -->
-        <div class="relative bg-white rounded-lg shadow-xl dark:bg-gray-700 border border-gray-400">
-            <!-- Modal header -->
-            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Reset Admin Password</h3>
-                <button type="button"
-                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                    data-modal-hide="edit-modal">
-                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 14 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                    </svg>
-                    <span class="sr-only">Close modal</span>
-                </button>
-            </div>
-            <!-- Modal body -->
-            <div class="p-4 md:p-5 space-y-4">
-                <form id="editForm" class="p-4 md:p-5">
-                    <input type="hidden" id="editKey">
-                    <div class="grid gap-4 mb-4">
-                        <div>
-                            <label for="editPassword"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Reset Password</label>
-                            <input type="password" name="password" id="editPassword"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 transition block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                placeholder="Type new password" required />
-                        </div>
-                    </div>
-                    <button type="submit"
-                        class="text-white inline-flex items-center bg-emerald-900 hover:bg-emerald-950 transition shadow-lg focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Save
+    <div id="edit-modal-container" class="hidden fixed inset-0 z-50 flex items-center justify-center">
+        <!-- Overlay -->
+        <div id="overlay" class="fixed inset-0 bg-gray-900 bg-opacity-50"></div>
+        <!-- Modal -->
+        <div id="edit-modal" tabindex="-1" aria-hidden="true" class="relative p-4 w-full max-w-md max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow-xl dark:bg-gray-700 border border-gray-400">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Reset Admin Password</h3>
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-hide="edit-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
                     </button>
-                </form>
+                </div>
+                <!-- Modal body -->
+                <div class="p-4 md:p-5 space-y-4">
+                    <form id="editForm" class="p-4 md:p-5">
+                        <input type="hidden" id="editKey">
+                        <div class="grid gap-4 mb-4">
+                            <div>
+                                <label for="editPassword"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Reset
+                                    Password</label>
+                                <input type="password" name="password" id="editPassword"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 transition block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Type new password" required />
+                            </div>
+                        </div>
+                        <button type="submit"
+                            class="text-white inline-flex items-center bg-emerald-900 hover:bg-emerald-950 transition shadow-lg focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Save
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
-        <script>
-            document.getElementById('logoutButton').addEventListener('click', function () {
-                localStorage.removeItem('isLoggedIn');
-                window.location.href = 'admin-login.html';
-            });
-        </script>
+    <script>
+        document.getElementById('logoutButton').addEventListener('click', function () {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'admin-login.html';
+        });
+    </script>
 
-        <script type="module" src="../../resource/js/common/show-admin-tbl.js"></script>
-        <script type="module" src="../../resource/js/common/init-admin.js"></script>
-        <script type="module" src="../../resource/js/common/process-logout-admin.js"></script>
-        <script type="module" src="../../resource/js/common/display-user-info.js"></script>
+    <script type="module" src="../../resource/js/common/show-admin-tbl.js"></script>
+    <script type="module" src="../../resource/js/common/init-admin.js"></script>
+    <script type="module" src="../../resource/js/common/process-logout-admin.js"></script>
+    <script type="module" src="../../resource/js/common/display-user-info.js"></script>
 
-        <script type="module" src="../../resource/js/configfb.js"></script>
-        <script src="../../resource/js/frontend/flowbite.min.js"></script>
-        <script src="../../resource/js/frontend/bundle.js"></script>
+    <script type="module" src="../../resource/js/configfb.js"></script>
+    <script src="../../resource/js/frontend/flowbite.min.js"></script>
+    <script src="../../resource/js/frontend/bundle.js"></script>
 </body>
 
 </html>
