@@ -39,9 +39,11 @@ document.addEventListener("DOMContentLoaded", function() {
                         title: 'Data berhasil dikirim!',
                         showConfirmButton: false,
                         timer: 1500
+                    }).then(() => {
+                        location.reload();
                     });
 
-                    form.reset();
+
                 }).catch((error) => {
                     console.error("Error writing to database:", error);
                     // Tampilkan SweetAlert untuk pesan kesalahan
