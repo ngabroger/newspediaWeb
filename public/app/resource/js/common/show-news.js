@@ -168,8 +168,11 @@ function updateNewsItem(key, updatedData) {
                 'Updated!',
                 'Your item has been updated.',
                 'success'
-            );
+            ).then(() => {
+                location.reload(); // Reload the web page
+            });
             document.getElementById('edit-modal').classList.add('hidden');
+            
         })
         .catch((error) => {
             console.error("Error updating item: ", error);
