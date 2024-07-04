@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('newsForm');
     form.addEventListener("submit", function(event) {
         event.preventDefault();
+        const newId = Math.random().toString(36).substr(2, 10);
         const nameNews = document.getElementById("nameNews").value;
         const listCategory = document.getElementById("listCategory").value;
         const datePublish = document.getElementById("datePublish").value;
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 const newsRef = ref(db, 'NewsList');
                 push(newsRef, {
+                    newsId: newId,
                     nameNews: nameNews,
                     category: listCategory,
                     datePublish: datePublish,

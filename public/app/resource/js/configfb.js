@@ -1,7 +1,9 @@
-// config-firebase.js
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
 import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
-import { getStorage } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js'; // Impor getStorage dari Firebase Storage
+import { getStorage } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js';
+import { getAuth} from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js'; // Import getAuth from Firebase Auth
+
+// config-firebase.js
 const firebaseConfig = {
   apiKey: "AIzaSyAV5Ksy5dKllrvDqwgMk0hmRcGJHsmjzhI",
   authDomain: "newspedia-1d8af.firebaseapp.com",
@@ -13,11 +15,10 @@ const firebaseConfig = {
   measurementId: "G-XYYSCK63RJ"
 };
 
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const storage = getStorage(app);
-// const auth = getAuth(app);
-export { db ,storage};
+const auth = getAuth(app); // Initialize Firebase Auth
+export { db, storage, auth };
 
