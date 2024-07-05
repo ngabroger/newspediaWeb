@@ -1192,10 +1192,6 @@ input:checked + .toggle-bg{
   margin: 1.75rem;
 }
 
-.m-0{
-  margin: 0px;
-}
-
 .mx-8{
   margin-left: 2rem;
   margin-right: 2rem;
@@ -1209,6 +1205,10 @@ input:checked + .toggle-bg{
 .my-4{
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.-mb-2{
+  margin-bottom: -0.5rem;
 }
 
 .-ms-1{
@@ -1335,16 +1335,16 @@ input:checked + .toggle-bg{
   margin-top: 15rem;
 }
 
-.mb-0{
-  margin-bottom: 0px;
+.mr-1{
+  margin-right: 0.25rem;
 }
 
-.-mt-2{
-  margin-top: -0.5rem;
+.ml-0{
+  margin-left: 0px;
 }
 
-.-mb-2{
-  margin-bottom: -0.5rem;
+.ml-0\.5{
+  margin-left: 0.125rem;
 }
 
 .block{
@@ -1435,6 +1435,10 @@ input:checked + .toggle-bg{
   height: 100vh;
 }
 
+.h-\[26px\]{
+  height: 26px;
+}
+
 .max-h-full{
   max-height: 100%;
 }
@@ -1504,8 +1508,16 @@ input:checked + .toggle-bg{
   width: 100vw;
 }
 
+.w-\[26px\]{
+  width: 26px;
+}
+
 .min-w-\[80px\]{
   min-width: 80px;
+}
+
+.min-w-\[20px\]{
+  min-width: 20px;
 }
 
 .max-w-2xl{
@@ -2996,10 +3008,6 @@ input:checked + .toggle-bg{
     max-width: 100%;
   }
 
-  .lg\:flex-row{
-    flex-direction: row;
-  }
-
   .lg\:items-center{
     align-items: center;
   }
@@ -3069,6 +3077,10 @@ input:checked + .toggle-bg{
 
   .xl\:max-w-4xl{
     max-width: 56rem;
+  }
+
+  .xl\:flex-row{
+    flex-direction: row;
   }
 
   .xl\:items-center{

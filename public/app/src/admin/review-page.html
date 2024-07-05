@@ -26,7 +26,7 @@
       });
   </script>
 
-    <title>News panel | Newspedia</title>
+    <title>Review panel | Newspedia</title>
 </head>
 
   <body
@@ -95,6 +95,7 @@
         </div>
     </nav>
 
+    <!-- SIDEBAR NAV -->
     <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 shadow-xl" aria-label="Sidebar">
       <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <ul class="space-y-2 font-medium">
@@ -109,17 +110,9 @@
           </li>
           <li>
             <a href="admin-page.html" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-              <svg
-                class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 18"
-              >
-                <path
-                  d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"
-                />
-              </svg>
+              <svg class="flex-shrink-0 w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z"clip-rule="evenodd" />
+            </svg>
               <span class="flex-1 ms-3 whitespace-nowrap">Admin</span>
             </a>
           </li>
@@ -135,16 +128,26 @@
           <li>
             <a href="#"
                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                    viewBox="0 0 20 20">
-                    <path
-                        d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z" />
-                </svg>
-                <span class="flex-1 ms-3 whitespace-nowrap">Review</span>
+                <svg class="flex-shrink-0 w-5 h-5 ml-0.5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 24 20">
+                            <path
+                                d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z" />
+                        </svg>
+                <span class="flex-1 ms-2.5 whitespace-nowrap">Review</span>
                 
             </a>
         </li>
+        <li>
+          <a href="users-page.html"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd"/>
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap">Users</span>
+              
+          </a>
+      </li>
           <!-- <li>
                     <a href="#"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
@@ -187,12 +190,16 @@
       </div>
     </aside>
 
+
+    <!-- MAIN PAGE -->
     <div class="p-9 sm:ml-64">
+      <!-- TITLE PAGE -->
       <h1 class="my-4 mt-14 ml-4 text-2xl font-semibold tracking-tight text-gray-700 dark:text-white">Review 
         <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
           Discover exclusive interviews, analysis, and insights on politics, technology, entertainment, and more. Join our community to share your own news and contribute to the conversation.
         </p>
       </h1>
+      <!-- REVIEW TABLE -->
       <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-6">
         <div class="rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
           <div class="items-center mb-3 justify-between block sm:flex md:divide-x md:divide-gray-100 dark:gray-700">
@@ -209,20 +216,19 @@
                 </div>
               </form>
             </div>
-            <button
+            <!-- <button
               type="button"
               data-modal-target="crud-modal"
               data-modal-toggle="crud-modal"
               class="text-white dark:text-black inline-flex items-center bg-emerald-900 hover:bg-emerald-950 transition shadow-lg focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
             >
               Add Review
-            </button>
+            </button> -->
           </div>
           <div class="max-w-full overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full table-auto text-sm text-left rtl:text-right dark:text-blue-100">
               <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
                 <tr class="bg-gray-2 text-left dark:bg-meta-4">
-                 
                   <th class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">Reviewer Name</th>
                   <th class="min-w-[80px] px-4 py-4 font-medium text-black dark:text-white">Description</th>
                   <th class="px-4 py-4 font-medium text-black dark:text-white truncate...">Actions</th>
@@ -235,7 +241,8 @@
         </div>
       </div>
     </div>
-    <!-- MODAL ADD -->
+
+    <!-- MODAL ADD FORM -->
     <div
       id="crud-modal"
       data-modal-target="crud-modal"
@@ -269,19 +276,18 @@
                   type="text"
                   name="name"
                   id="reviewName"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5    dark:text-white "
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-900 focus:border-emerald-900 transition block w-full p-2.5    dark:text-white "
                   placeholder="Type News title"
                   required=""
                 />
               </div>
-             
             
               <div class="col-span-2">
                 <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
                 <textarea
                   id="description"
                   rows="4"
-                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-emerald-900 focus:border-emerald-900 transition dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Write News description here"
                 ></textarea>
               </div>
