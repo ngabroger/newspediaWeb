@@ -1,5 +1,5 @@
 import { db } from '../configfb.js';
-import { ref, get, child } from 'firebase/database';
+import { ref, get, child } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js';
 
 export async function checkAdminCredentials(usernameAdmin, passwordAdmin) {
   if (!usernameAdmin || !passwordAdmin) {
